@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.data.m5p.mapper.GpaMapper">
+  <resultMap id="BaseResultMap" type="com.data.m5p.pojo.Gpa">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="personal_info_id" jdbcType="BIGINT" property="personalInfoId" />
+    <result column="year1_score" jdbcType="DECIMAL" property="year1Score" />
+    <result column="year1_rank" jdbcType="VARCHAR" property="year1Rank" />
+    <result column="year1_gpa" jdbcType="DECIMAL" property="year1Gpa" />
+    <result column="year2_score" jdbcType="DECIMAL" property="year2Score" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+</mapper>

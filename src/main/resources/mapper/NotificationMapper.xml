@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.data.m5p.mapper.NotificationMapper">
+  <resultMap id="BaseResultMap" type="com.data.m5p.pojo.Notification">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="receiver_type" jdbcType="INTEGER" property="receiverType" />
+    <result column="receiver_id" jdbcType="BIGINT" property="receiverId" />
+    <result column="sender_type" jdbcType="INTEGER" property="senderType" />
+    <result column="sender_id" jdbcType="BIGINT" property="senderId" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+</mapper>

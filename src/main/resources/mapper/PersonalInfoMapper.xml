@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.data.m5p.mapper.PersonalInfoMapper">
+  <resultMap id="BaseResultMap" type="com.data.m5p.pojo.PersonalInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="gpa_id" jdbcType="BIGINT" property="gpaId" />
+    <result column="test_id" jdbcType="BIGINT" property="testId" />
+    <result column="self_intro_id" jdbcType="BIGINT" property="selfIntroId" />
+    <result column="achivement_id" jdbcType="BIGINT" property="achivementId" />
+    <result column="experience_id" jdbcType="BIGINT" property="experienceId" />
+    <result column="other_info_id" jdbcType="BIGINT" property="otherInfoId" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+</mapper>
