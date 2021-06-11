@@ -1,6 +1,16 @@
 package com.data.m5p.vo;
 
 public class UserVO {
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     private String displayName;
     private Integer gender;
 
