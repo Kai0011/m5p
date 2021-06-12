@@ -2,6 +2,18 @@ package com.data.m5p.vo;
 
 public class UserVO {
     private Long id;
+    private String icon;
+    private String displayName;
+    private Integer gender;
+    private String realName;
+
+    public String getRealName() {
+        return realName;
+    }
+
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
 
     public Long getId() {
         return id;
@@ -11,8 +23,13 @@ public class UserVO {
         this.id = id;
     }
 
-    private String displayName;
-    private Integer gender;
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
     public String getDisplayName() {
         return displayName;

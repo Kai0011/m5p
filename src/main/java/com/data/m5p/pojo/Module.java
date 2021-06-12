@@ -11,7 +11,13 @@ public class Module {
 
     private String name;
 
+    private String time;
+
+    private String requirement;
+
     private String briefing;
+
+    private String icon;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -20,6 +26,8 @@ public class Module {
     private Date modifiedDate;
 
     private Integer status;
+
+    private String extra;
 
     /**
      * @return id
@@ -50,6 +58,34 @@ public class Module {
     }
 
     /**
+     * @return time
+     */
+    public String getTime() {
+        return time;
+    }
+
+    /**
+     * @param time
+     */
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    /**
+     * @return requirement
+     */
+    public String getRequirement() {
+        return requirement;
+    }
+
+    /**
+     * @param requirement
+     */
+    public void setRequirement(String requirement) {
+        this.requirement = requirement;
+    }
+
+    /**
      * @return briefing
      */
     public String getBriefing() {
@@ -61,6 +97,20 @@ public class Module {
      */
     public void setBriefing(String briefing) {
         this.briefing = briefing;
+    }
+
+    /**
+     * @return icon
+     */
+    public String getIcon() {
+        return icon;
+    }
+
+    /**
+     * @param icon
+     */
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     /**
@@ -103,5 +153,19 @@ public class Module {
      */
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    /**
+     * @return extra
+     */
+    public String getExtra() {
+        return extra;
+    }
+
+    /**
+     * @param extra
+     */
+    public void setExtra(String extra) {
+        this.extra = extra;
     }
 }

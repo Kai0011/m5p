@@ -3,24 +3,20 @@ package com.data.m5p.pojo;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "`post`")
-public class Post {
+@Table(name = "`post_content`")
+public class PostContent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Column(name = "post_id")
+    private Long postId;
 
-    /**
-     * 1 - offer
-2 - job
-3 - other
-     */
-    @Column(name = "post_type")
-    private Integer postType;
+    @Column(name = "offer_study_id")
+    private Long offerStudyId;
 
-    @Column(name = "post_content_id")
-    private Long postContentId;
+    @Column(name = "ofeer_job_id")
+    private Long ofeerJobId;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -29,6 +25,8 @@ public class Post {
     private Date modifiedDate;
 
     private Integer status;
+
+    private String content;
 
     /**
      * @return id
@@ -45,57 +43,45 @@ public class Post {
     }
 
     /**
-     * @return name
+     * @return post_id
      */
-    public String getName() {
-        return name;
+    public Long getPostId() {
+        return postId;
     }
 
     /**
-     * @param name
+     * @param postId
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setPostId(Long postId) {
+        this.postId = postId;
     }
 
     /**
-     * 获取1 - offer
-2 - job
-3 - other
-     *
-     * @return post_type - 1 - offer
-2 - job
-3 - other
+     * @return offer_study_id
      */
-    public Integer getPostType() {
-        return postType;
+    public Long getOfferStudyId() {
+        return offerStudyId;
     }
 
     /**
-     * 设置1 - offer
-2 - job
-3 - other
-     *
-     * @param postType 1 - offer
-2 - job
-3 - other
+     * @param offerStudyId
      */
-    public void setPostType(Integer postType) {
-        this.postType = postType;
+    public void setOfferStudyId(Long offerStudyId) {
+        this.offerStudyId = offerStudyId;
     }
 
     /**
-     * @return post_content_id
+     * @return ofeer_job_id
      */
-    public Long getPostContentId() {
-        return postContentId;
+    public Long getOfeerJobId() {
+        return ofeerJobId;
     }
 
     /**
-     * @param postContentId
+     * @param ofeerJobId
      */
-    public void setPostContentId(Long postContentId) {
-        this.postContentId = postContentId;
+    public void setOfeerJobId(Long ofeerJobId) {
+        this.ofeerJobId = ofeerJobId;
     }
 
     /**
@@ -138,5 +124,19 @@ public class Post {
      */
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    /**
+     * @return content
+     */
+    public String getContent() {
+        return content;
+    }
+
+    /**
+     * @param content
+     */
+    public void setContent(String content) {
+        this.content = content;
     }
 }

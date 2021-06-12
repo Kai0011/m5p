@@ -3,24 +3,16 @@ package com.data.m5p.pojo;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "`post`")
-public class Post {
-    @Id
+@Table(name = "`user_offer_job_relation`")
+public class UserOfferJobRelation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Column(name = "user_id")
+    private Long userId;
 
-    /**
-     * 1 - offer
-2 - job
-3 - other
-     */
-    @Column(name = "post_type")
-    private Integer postType;
-
-    @Column(name = "post_content_id")
-    private Long postContentId;
+    @Column(name = "offer_job_id")
+    private Long offerJobId;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -45,57 +37,31 @@ public class Post {
     }
 
     /**
-     * @return name
+     * @return user_id
      */
-    public String getName() {
-        return name;
+    public Long getUserId() {
+        return userId;
     }
 
     /**
-     * @param name
+     * @param userId
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     /**
-     * 获取1 - offer
-2 - job
-3 - other
-     *
-     * @return post_type - 1 - offer
-2 - job
-3 - other
+     * @return offer_job_id
      */
-    public Integer getPostType() {
-        return postType;
+    public Long getOfferJobId() {
+        return offerJobId;
     }
 
     /**
-     * 设置1 - offer
-2 - job
-3 - other
-     *
-     * @param postType 1 - offer
-2 - job
-3 - other
+     * @param offerJobId
      */
-    public void setPostType(Integer postType) {
-        this.postType = postType;
-    }
-
-    /**
-     * @return post_content_id
-     */
-    public Long getPostContentId() {
-        return postContentId;
-    }
-
-    /**
-     * @param postContentId
-     */
-    public void setPostContentId(Long postContentId) {
-        this.postContentId = postContentId;
+    public void setOfferJobId(Long offerJobId) {
+        this.offerJobId = offerJobId;
     }
 
     /**

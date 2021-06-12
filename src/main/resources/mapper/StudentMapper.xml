@@ -7,8 +7,13 @@
     -->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="major" jdbcType="VARCHAR" property="major" />
+    <result column="grade" jdbcType="VARCHAR" property="grade" />
+    <result column="briefing" jdbcType="VARCHAR" property="briefing" />
+    <result column="cv" jdbcType="VARCHAR" property="cv" />
+    <result column="status" jdbcType="INTEGER" property="status" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
-    <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
 </mapper>

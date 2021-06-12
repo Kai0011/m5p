@@ -12,6 +12,9 @@ public class Test {
     @Column(name = "personal_info_id")
     private Long personalInfoId;
 
+    @Column(name = "student_id")
+    private Long studentId;
+
     @Column(name = "test_name")
     private String testName;
 
@@ -21,8 +24,6 @@ public class Test {
 
     private String location;
 
-    private String detail;
-
     @Column(name = "create_date")
     private Date createDate;
 
@@ -30,6 +31,8 @@ public class Test {
     private Date modifiedDate;
 
     private Integer status;
+
+    private String detail;
 
     /**
      * @return id
@@ -57,6 +60,20 @@ public class Test {
      */
     public void setPersonalInfoId(Long personalInfoId) {
         this.personalInfoId = personalInfoId;
+    }
+
+    /**
+     * @return student_id
+     */
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    /**
+     * @param studentId
+     */
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
     }
 
     /**
@@ -116,20 +133,6 @@ public class Test {
     }
 
     /**
-     * @return detail
-     */
-    public String getDetail() {
-        return detail;
-    }
-
-    /**
-     * @param detail
-     */
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
-
-    /**
      * @return create_date
      */
     public Date getCreateDate() {
@@ -169,5 +172,19 @@ public class Test {
      */
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    /**
+     * @return detail
+     */
+    public String getDetail() {
+        return detail;
+    }
+
+    /**
+     * @param detail
+     */
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 }

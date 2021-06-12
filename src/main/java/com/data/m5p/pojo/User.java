@@ -15,8 +15,13 @@ public class User {
     @Column(name = "login_psw")
     private String loginPsw;
 
+    private String icon;
+
     @Column(name = "display_name")
     private String displayName;
+
+    @Column(name = "real_name")
+    private String realName;
 
     /**
      * 1 - male
@@ -32,8 +37,6 @@ public class User {
      */
     @Column(name = "user_type")
     private Integer userType;
-
-    private String usercol;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -86,6 +89,20 @@ public class User {
     }
 
     /**
+     * @return icon
+     */
+    public String getIcon() {
+        return icon;
+    }
+
+    /**
+     * @param icon
+     */
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    /**
      * @return display_name
      */
     public String getDisplayName() {
@@ -97,6 +114,20 @@ public class User {
      */
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+    }
+
+    /**
+     * @return real_name
+     */
+    public String getRealName() {
+        return realName;
+    }
+
+    /**
+     * @param realName
+     */
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
 
     /**
@@ -149,20 +180,6 @@ public class User {
      */
     public void setUserType(Integer userType) {
         this.userType = userType;
-    }
-
-    /**
-     * @return usercol
-     */
-    public String getUsercol() {
-        return usercol;
-    }
-
-    /**
-     * @param usercol
-     */
-    public void setUsercol(String usercol) {
-        this.usercol = usercol;
     }
 
     /**

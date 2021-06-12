@@ -7,13 +7,14 @@
     -->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="personal_info_id" jdbcType="BIGINT" property="personalInfoId" />
+    <result column="student_id" jdbcType="BIGINT" property="studentId" />
     <result column="test_name" jdbcType="VARCHAR" property="testName" />
     <result column="score" jdbcType="DECIMAL" property="score" />
     <result column="time" jdbcType="VARCHAR" property="time" />
     <result column="location" jdbcType="VARCHAR" property="location" />
-    <result column="detail" jdbcType="VARCHAR" property="detail" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
     <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="detail" jdbcType="LONGVARCHAR" property="detail" />
   </resultMap>
 </mapper>

@@ -12,7 +12,24 @@ public class Experience {
     @Column(name = "personal_info_id")
     private Long personalInfoId;
 
-    private String content;
+    @Column(name = "student_id")
+    private Long studentId;
+
+    private String type;
+
+    private String title;
+
+    @Column(name = "start_time")
+    private String startTime;
+
+    @Column(name = "end_time")
+    private String endTime;
+
+    private String organization;
+
+    private String position;
+
+    private String discription;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -51,17 +68,115 @@ public class Experience {
     }
 
     /**
-     * @return content
+     * @return student_id
      */
-    public String getContent() {
-        return content;
+    public Long getStudentId() {
+        return studentId;
     }
 
     /**
-     * @param content
+     * @param studentId
      */
-    public void setContent(String content) {
-        this.content = content;
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    /**
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * @param type
+     */
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * @return title
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * @param title
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * @return start_time
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    /**
+     * @param startTime
+     */
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * @return end_time
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    /**
+     * @param endTime
+     */
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * @return organization
+     */
+    public String getOrganization() {
+        return organization;
+    }
+
+    /**
+     * @param organization
+     */
+    public void setOrganization(String organization) {
+        this.organization = organization;
+    }
+
+    /**
+     * @return position
+     */
+    public String getPosition() {
+        return position;
+    }
+
+    /**
+     * @param position
+     */
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    /**
+     * @return discription
+     */
+    public String getDiscription() {
+        return discription;
+    }
+
+    /**
+     * @param discription
+     */
+    public void setDiscription(String discription) {
+        this.discription = discription;
     }
 
     /**

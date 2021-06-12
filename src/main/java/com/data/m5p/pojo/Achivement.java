@@ -12,7 +12,18 @@ public class Achivement {
     @Column(name = "personal_info_id")
     private Long personalInfoId;
 
-    private String content;
+    @Column(name = "student_id")
+    private Long studentId;
+
+    private String type;
+
+    private String title;
+
+    private String time;
+
+    private String issuer;
+
+    private String discription;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -51,17 +62,87 @@ public class Achivement {
     }
 
     /**
-     * @return content
+     * @return student_id
      */
-    public String getContent() {
-        return content;
+    public Long getStudentId() {
+        return studentId;
     }
 
     /**
-     * @param content
+     * @param studentId
      */
-    public void setContent(String content) {
-        this.content = content;
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    /**
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * @param type
+     */
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * @return title
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * @param title
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * @return time
+     */
+    public String getTime() {
+        return time;
+    }
+
+    /**
+     * @param time
+     */
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    /**
+     * @return issuer
+     */
+    public String getIssuer() {
+        return issuer;
+    }
+
+    /**
+     * @param issuer
+     */
+    public void setIssuer(String issuer) {
+        this.issuer = issuer;
+    }
+
+    /**
+     * @return discription
+     */
+    public String getDiscription() {
+        return discription;
+    }
+
+    /**
+     * @param discription
+     */
+    public void setDiscription(String discription) {
+        this.discription = discription;
     }
 
     /**

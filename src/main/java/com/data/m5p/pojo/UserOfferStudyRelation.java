@@ -3,24 +3,17 @@ package com.data.m5p.pojo;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "`post`")
-public class Post {
+@Table(name = "`user_offer_study_relation`")
+public class UserOfferStudyRelation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Column(name = "user_id")
+    private Long userId;
 
-    /**
-     * 1 - offer
-2 - job
-3 - other
-     */
-    @Column(name = "post_type")
-    private Integer postType;
-
-    @Column(name = "post_content_id")
-    private Long postContentId;
+    @Column(name = "offer_study_id")
+    private Long offerStudyId;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -45,57 +38,31 @@ public class Post {
     }
 
     /**
-     * @return name
+     * @return user_id
      */
-    public String getName() {
-        return name;
+    public Long getUserId() {
+        return userId;
     }
 
     /**
-     * @param name
+     * @param userId
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     /**
-     * 获取1 - offer
-2 - job
-3 - other
-     *
-     * @return post_type - 1 - offer
-2 - job
-3 - other
+     * @return offer_study_id
      */
-    public Integer getPostType() {
-        return postType;
+    public Long getOfferStudyId() {
+        return offerStudyId;
     }
 
     /**
-     * 设置1 - offer
-2 - job
-3 - other
-     *
-     * @param postType 1 - offer
-2 - job
-3 - other
+     * @param offerStudyId
      */
-    public void setPostType(Integer postType) {
-        this.postType = postType;
-    }
-
-    /**
-     * @return post_content_id
-     */
-    public Long getPostContentId() {
-        return postContentId;
-    }
-
-    /**
-     * @param postContentId
-     */
-    public void setPostContentId(Long postContentId) {
-        this.postContentId = postContentId;
+    public void setOfferStudyId(Long offerStudyId) {
+        this.offerStudyId = offerStudyId;
     }
 
     /**

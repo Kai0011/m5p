@@ -11,6 +11,16 @@ public class Comment {
 
     private String content;
 
+    private Double rating;
+
+    /**
+     * 1 - post
+2 - module
+3 - other
+     */
+    @Column(name = "comment_type")
+    private Integer commentType;
+
     @Column(name = "create_date")
     private Date createDate;
 
@@ -45,6 +55,46 @@ public class Comment {
      */
     public void setContent(String content) {
         this.content = content;
+    }
+
+    /**
+     * @return rating
+     */
+    public Double getRating() {
+        return rating;
+    }
+
+    /**
+     * @param rating
+     */
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
+    /**
+     * 获取1 - post
+2 - module
+3 - other
+     *
+     * @return comment_type - 1 - post
+2 - module
+3 - other
+     */
+    public Integer getCommentType() {
+        return commentType;
+    }
+
+    /**
+     * 设置1 - post
+2 - module
+3 - other
+     *
+     * @param commentType 1 - post
+2 - module
+3 - other
+     */
+    public void setCommentType(Integer commentType) {
+        this.commentType = commentType;
     }
 
     /**

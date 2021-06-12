@@ -12,17 +12,32 @@ public class Gpa {
     @Column(name = "personal_info_id")
     private Long personalInfoId;
 
+    @Column(name = "student_id")
+    private Long studentId;
+
     @Column(name = "year1_score")
     private Long year1Score;
 
     @Column(name = "year1_rank")
     private String year1Rank;
 
-    @Column(name = "year1_gpa")
-    private Long year1Gpa;
-
     @Column(name = "year2_score")
     private Long year2Score;
+
+    @Column(name = "year2_rank")
+    private String year2Rank;
+
+    @Column(name = "year3_score")
+    private Long year3Score;
+
+    @Column(name = "year3_rank")
+    private String year3Rank;
+
+    @Column(name = "year4_score")
+    private Long year4Score;
+
+    @Column(name = "year4_rank")
+    private String year4Rank;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -61,6 +76,20 @@ public class Gpa {
     }
 
     /**
+     * @return student_id
+     */
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    /**
+     * @param studentId
+     */
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    /**
      * @return year1_score
      */
     public Long getYear1Score() {
@@ -89,20 +118,6 @@ public class Gpa {
     }
 
     /**
-     * @return year1_gpa
-     */
-    public Long getYear1Gpa() {
-        return year1Gpa;
-    }
-
-    /**
-     * @param year1Gpa
-     */
-    public void setYear1Gpa(Long year1Gpa) {
-        this.year1Gpa = year1Gpa;
-    }
-
-    /**
      * @return year2_score
      */
     public Long getYear2Score() {
@@ -114,6 +129,76 @@ public class Gpa {
      */
     public void setYear2Score(Long year2Score) {
         this.year2Score = year2Score;
+    }
+
+    /**
+     * @return year2_rank
+     */
+    public String getYear2Rank() {
+        return year2Rank;
+    }
+
+    /**
+     * @param year2Rank
+     */
+    public void setYear2Rank(String year2Rank) {
+        this.year2Rank = year2Rank;
+    }
+
+    /**
+     * @return year3_score
+     */
+    public Long getYear3Score() {
+        return year3Score;
+    }
+
+    /**
+     * @param year3Score
+     */
+    public void setYear3Score(Long year3Score) {
+        this.year3Score = year3Score;
+    }
+
+    /**
+     * @return year3_rank
+     */
+    public String getYear3Rank() {
+        return year3Rank;
+    }
+
+    /**
+     * @param year3Rank
+     */
+    public void setYear3Rank(String year3Rank) {
+        this.year3Rank = year3Rank;
+    }
+
+    /**
+     * @return year4_score
+     */
+    public Long getYear4Score() {
+        return year4Score;
+    }
+
+    /**
+     * @param year4Score
+     */
+    public void setYear4Score(Long year4Score) {
+        this.year4Score = year4Score;
+    }
+
+    /**
+     * @return year4_rank
+     */
+    public String getYear4Rank() {
+        return year4Rank;
+    }
+
+    /**
+     * @param year4Rank
+     */
+    public void setYear4Rank(String year4Rank) {
+        this.year4Rank = year4Rank;
     }
 
     /**

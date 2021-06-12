@@ -3,24 +3,16 @@ package com.data.m5p.pojo;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "`post`")
-public class Post {
-    @Id
+@Table(name = "`module_comment_relation`")
+public class ModuleCommentRelation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Column(name = "module_id")
+    private Long moduleId;
 
-    /**
-     * 1 - offer
-2 - job
-3 - other
-     */
-    @Column(name = "post_type")
-    private Integer postType;
-
-    @Column(name = "post_content_id")
-    private Long postContentId;
+    @Column(name = "comment_id")
+    private Long commentId;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -45,57 +37,31 @@ public class Post {
     }
 
     /**
-     * @return name
+     * @return module_id
      */
-    public String getName() {
-        return name;
+    public Long getModuleId() {
+        return moduleId;
     }
 
     /**
-     * @param name
+     * @param moduleId
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setModuleId(Long moduleId) {
+        this.moduleId = moduleId;
     }
 
     /**
-     * 获取1 - offer
-2 - job
-3 - other
-     *
-     * @return post_type - 1 - offer
-2 - job
-3 - other
+     * @return comment_id
      */
-    public Integer getPostType() {
-        return postType;
+    public Long getCommentId() {
+        return commentId;
     }
 
     /**
-     * 设置1 - offer
-2 - job
-3 - other
-     *
-     * @param postType 1 - offer
-2 - job
-3 - other
+     * @param commentId
      */
-    public void setPostType(Integer postType) {
-        this.postType = postType;
-    }
-
-    /**
-     * @return post_content_id
-     */
-    public Long getPostContentId() {
-        return postContentId;
-    }
-
-    /**
-     * @param postContentId
-     */
-    public void setPostContentId(Long postContentId) {
-        this.postContentId = postContentId;
+    public void setCommentId(Long commentId) {
+        this.commentId = commentId;
     }
 
     /**

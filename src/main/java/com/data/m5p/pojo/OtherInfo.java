@@ -12,7 +12,16 @@ public class OtherInfo {
     @Column(name = "personal_info_id")
     private Long personalInfoId;
 
-    private String content;
+    @Column(name = "student_id")
+    private Long studentId;
+
+    private String technique;
+
+    private String field;
+
+    private String interest;
+
+    private String website;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -51,17 +60,73 @@ public class OtherInfo {
     }
 
     /**
-     * @return content
+     * @return student_id
      */
-    public String getContent() {
-        return content;
+    public Long getStudentId() {
+        return studentId;
     }
 
     /**
-     * @param content
+     * @param studentId
      */
-    public void setContent(String content) {
-        this.content = content;
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    /**
+     * @return technique
+     */
+    public String getTechnique() {
+        return technique;
+    }
+
+    /**
+     * @param technique
+     */
+    public void setTechnique(String technique) {
+        this.technique = technique;
+    }
+
+    /**
+     * @return field
+     */
+    public String getField() {
+        return field;
+    }
+
+    /**
+     * @param field
+     */
+    public void setField(String field) {
+        this.field = field;
+    }
+
+    /**
+     * @return interest
+     */
+    public String getInterest() {
+        return interest;
+    }
+
+    /**
+     * @param interest
+     */
+    public void setInterest(String interest) {
+        this.interest = interest;
+    }
+
+    /**
+     * @return website
+     */
+    public String getWebsite() {
+        return website;
+    }
+
+    /**
+     * @param website
+     */
+    public void setWebsite(String website) {
+        this.website = website;
     }
 
     /**

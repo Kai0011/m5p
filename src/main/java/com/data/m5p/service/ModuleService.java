@@ -73,7 +73,11 @@ public class ModuleService {
         ModuleVO moduleVO = new ModuleVO();
         moduleVO.setId(module.getId());
         moduleVO.setName(module.getName());
+        moduleVO.setTime(module.getTime());
+        moduleVO.setRequirement(module.getRequirement());
         moduleVO.setBriefing(module.getBriefing());
+        moduleVO.setIcon(module.getIcon());
+        moduleVO.setExtra(module.getExtra());
         return moduleVO;
     }
 
@@ -83,7 +87,11 @@ public class ModuleService {
             ModuleVO moduleVO = new ModuleVO();
             moduleVO.setId(module.getId());
             moduleVO.setName(module.getName());
+            moduleVO.setTime(module.getTime());
+            moduleVO.setRequirement(module.getRequirement());
             moduleVO.setBriefing(module.getBriefing());
+            moduleVO.setIcon(module.getIcon());
+            moduleVO.setExtra(module.getExtra());
             moduleVOS.add(moduleVO);
         }
         return moduleVOS;

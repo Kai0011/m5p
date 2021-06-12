@@ -70,6 +70,8 @@ public class UserService {
         userVO.setId(user.getId());
         userVO.setDisplayName(user.getDisplayName());
         userVO.setGender(user.getGender());
+        userVO.setIcon(user.getIcon());
+        userVO.setRealName(user.getRealName());
         return userVO;
     }
 }

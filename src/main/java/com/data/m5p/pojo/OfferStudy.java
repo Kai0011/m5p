@@ -3,24 +3,20 @@ package com.data.m5p.pojo;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "`post`")
-public class Post {
+@Table(name = "`offer_study`")
+public class OfferStudy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    /**
-     * 1 - offer
-2 - job
-3 - other
-     */
-    @Column(name = "post_type")
-    private Integer postType;
+    private String university;
 
-    @Column(name = "post_content_id")
-    private Long postContentId;
+    private String project;
+
+    @Column(name = "offer_bg_id")
+    private Long offerBgId;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -59,43 +55,45 @@ public class Post {
     }
 
     /**
-     * 获取1 - offer
-2 - job
-3 - other
-     *
-     * @return post_type - 1 - offer
-2 - job
-3 - other
+     * @return university
      */
-    public Integer getPostType() {
-        return postType;
+    public String getUniversity() {
+        return university;
     }
 
     /**
-     * 设置1 - offer
-2 - job
-3 - other
-     *
-     * @param postType 1 - offer
-2 - job
-3 - other
+     * @param university
      */
-    public void setPostType(Integer postType) {
-        this.postType = postType;
+    public void setUniversity(String university) {
+        this.university = university;
     }
 
     /**
-     * @return post_content_id
+     * @return project
      */
-    public Long getPostContentId() {
-        return postContentId;
+    public String getProject() {
+        return project;
     }
 
     /**
-     * @param postContentId
+     * @param project
      */
-    public void setPostContentId(Long postContentId) {
-        this.postContentId = postContentId;
+    public void setProject(String project) {
+        this.project = project;
+    }
+
+    /**
+     * @return offer_bg_id
+     */
+    public Long getOfferBgId() {
+        return offerBgId;
+    }
+
+    /**
+     * @param offerBgId
+     */
+    public void setOfferBgId(Long offerBgId) {
+        this.offerBgId = offerBgId;
     }
 
     /**

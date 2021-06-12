@@ -3,24 +3,18 @@ package com.data.m5p.pojo;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "`post`")
-public class Post {
+@Table(name = "`offer_job`")
+public class OfferJob {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String company;
 
-    /**
-     * 1 - offer
-2 - job
-3 - other
-     */
-    @Column(name = "post_type")
-    private Integer postType;
+    private String position;
 
-    @Column(name = "post_content_id")
-    private Long postContentId;
+    @Column(name = "offer_bg_id")
+    private Long offerBgId;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -45,57 +39,45 @@ public class Post {
     }
 
     /**
-     * @return name
+     * @return company
      */
-    public String getName() {
-        return name;
+    public String getCompany() {
+        return company;
     }
 
     /**
-     * @param name
+     * @param company
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     /**
-     * 获取1 - offer
-2 - job
-3 - other
-     *
-     * @return post_type - 1 - offer
-2 - job
-3 - other
+     * @return position
      */
-    public Integer getPostType() {
-        return postType;
+    public String getPosition() {
+        return position;
     }
 
     /**
-     * 设置1 - offer
-2 - job
-3 - other
-     *
-     * @param postType 1 - offer
-2 - job
-3 - other
+     * @param position
      */
-    public void setPostType(Integer postType) {
-        this.postType = postType;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     /**
-     * @return post_content_id
+     * @return offer_bg_id
      */
-    public Long getPostContentId() {
-        return postContentId;
+    public Long getOfferBgId() {
+        return offerBgId;
     }
 
     /**
-     * @param postContentId
+     * @param offerBgId
      */
-    public void setPostContentId(Long postContentId) {
-        this.postContentId = postContentId;
+    public void setOfferBgId(Long offerBgId) {
+        this.offerBgId = offerBgId;
     }
 
     /**

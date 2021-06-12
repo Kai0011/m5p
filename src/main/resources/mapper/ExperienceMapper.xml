@@ -7,7 +7,14 @@
     -->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="personal_info_id" jdbcType="BIGINT" property="personalInfoId" />
-    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="student_id" jdbcType="BIGINT" property="studentId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="start_time" jdbcType="VARCHAR" property="startTime" />
+    <result column="end_time" jdbcType="VARCHAR" property="endTime" />
+    <result column="organization" jdbcType="VARCHAR" property="organization" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="discription" jdbcType="VARCHAR" property="discription" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
     <result column="status" jdbcType="INTEGER" property="status" />
