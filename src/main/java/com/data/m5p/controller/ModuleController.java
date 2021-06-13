@@ -1,5 +1,6 @@
 package com.data.m5p.controller;
 
+import com.data.m5p.ao.ModuleTagAO;
 import com.data.m5p.common.CommonResult;
 import com.data.m5p.pojo.Module;
 import com.data.m5p.service.ModuleService;
@@ -17,20 +18,19 @@ public class ModuleController {
     private ModuleService moduleService;
 
     @PostMapping("/modules")
-    public CommonResult<String> createModule(@RequestBody Module module) {
+    public CommonResult<String> createModule(@RequestBody ModuleTagAO moduleTagAO) {
 
-        moduleService.createModule(module);
+        moduleService.createModule(moduleTagAO);
 
         return CommonResult.success("create module successfully");
     }
 
     @GetMapping("/modules")
-    public CommonResult<List<ModuleVO>> getModule() {
+    public CommonResult<List<ModuleTagAO>> getModule() {
 
-        List<Module> modules = moduleService.getModule();
-        List<ModuleVO> moduleVOS = ModuleService.ModulesToModuleVOS(modules);
+        List<ModuleTagAO> moduleTagAOS = moduleService.getModule();
 
-        return CommonResult.success(moduleVOS);
+        return CommonResult.success(moduleTagAOS);
     }
 
     @GetMapping("/modules/{id}")
@@ -40,6 +40,14 @@ public class ModuleController {
         ModuleVO moduleVO = ModuleService.ModuleToModuleVO(module);
 
         return CommonResult.success(moduleVO);
+    }
+
+    @GetMapping("modules/student/{id}")
+    public CommonResult<List<ModuleTagAO>> getModuleByStudent(@PathVariable Long id) {
+        List<ModuleTagAO> moduleTagAOS = moduleService.getModuleByStudent(id);
+
+        return CommonResult.success(moduleTagAOS);
+
     }
 
     @PutMapping("/modules/{id}")

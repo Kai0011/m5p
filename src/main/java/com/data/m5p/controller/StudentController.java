@@ -4,7 +4,7 @@ import com.data.m5p.common.CommonResult;
 import com.data.m5p.pojo.Gpa;
 import com.data.m5p.pojo.Student;
 import com.data.m5p.pojo.User;
-import com.data.m5p.service.GpaServcie;
+import com.data.m5p.service.GpaService;
 import com.data.m5p.service.StudentService;
 import com.data.m5p.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +19,7 @@ public class StudentController {
     @Resource
     private UserService userService;
     @Resource
-    private GpaServcie gpaServcie;
+    private GpaService gpaService;
 
     @PutMapping("/students/info/{id}")
     private CommonResult<String> updateInfo(@PathVariable Long id, @RequestBody Student student, User user) {
@@ -31,7 +31,7 @@ public class StudentController {
 
     @PutMapping("/students/gpa/{id}")
     private CommonResult<String> updateGpa(@PathVariable Long id, @RequestBody Gpa gpa) {
-        gpaServcie.updateGpa(gpa);
+        gpaService.updateGpa(gpa);
 
         return CommonResult.success("update gpa successfully");
     }

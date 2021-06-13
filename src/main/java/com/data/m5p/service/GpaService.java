@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 import java.util.Date;
 
 @Service
-public class GpaServcie {
+public class GpaService {
     @Resource
     private GpaMapper gpaMapper;
 
