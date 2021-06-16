@@ -15,8 +15,8 @@ public class PostContent {
     @Column(name = "offer_study_id")
     private Long offerStudyId;
 
-    @Column(name = "ofeer_job_id")
-    private Long ofeerJobId;
+    @Column(name = "offer_job_id")
+    private Long offerJobId;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -71,17 +71,17 @@ public class PostContent {
     }
 
     /**
-     * @return ofeer_job_id
+     * @return offer_job_id
      */
-    public Long getOfeerJobId() {
-        return ofeerJobId;
+    public Long getOfferJobId() {
+        return offerJobId;
     }
 
     /**
-     * @param ofeerJobId
+     * @param offerJobId
      */
-    public void setOfeerJobId(Long ofeerJobId) {
-        this.ofeerJobId = ofeerJobId;
+    public void setOfferJobId(Long offerJobId) {
+        this.offerJobId = offerJobId;
     }
 
     /**

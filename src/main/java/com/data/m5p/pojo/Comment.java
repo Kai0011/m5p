@@ -11,6 +11,8 @@ public class Comment {
 
     private String content;
 
+    private Long replying;
+
     private Double rating;
 
     /**
@@ -28,6 +30,12 @@ public class Comment {
     private Date modifiedDate;
 
     private Integer status;
+
+    @Column(name = "like_count")
+    private Integer likeCount;
+
+    @Column(name = "reply_count")
+    private Integer replyCount;
 
     /**
      * @return id
@@ -55,6 +63,20 @@ public class Comment {
      */
     public void setContent(String content) {
         this.content = content;
+    }
+
+    /**
+     * @return replying
+     */
+    public Long getReplying() {
+        return replying;
+    }
+
+    /**
+     * @param replying
+     */
+    public void setReplying(Long replying) {
+        this.replying = replying;
     }
 
     /**
@@ -137,5 +159,33 @@ public class Comment {
      */
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    /**
+     * @return like_count
+     */
+    public Integer getLikeCount() {
+        return likeCount;
+    }
+
+    /**
+     * @param likeCount
+     */
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    /**
+     * @return reply_count
+     */
+    public Integer getReplyCount() {
+        return replyCount;
+    }
+
+    /**
+     * @param replyCount
+     */
+    public void setReplyCount(Integer replyCount) {
+        this.replyCount = replyCount;
     }
 }

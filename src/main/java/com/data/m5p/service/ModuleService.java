@@ -3,12 +3,10 @@ package com.data.m5p.service;
 import com.data.m5p.ao.ModuleTagAO;
 import com.data.m5p.common.IdWorker;
 import com.data.m5p.idworker.DatacenterId;
-import com.data.m5p.mapper.ModuleMapper;
-import com.data.m5p.mapper.ModuleTagRelationMapper;
-import com.data.m5p.mapper.StudentModuleRelationMapper;
-import com.data.m5p.mapper.TagMapper;
+import com.data.m5p.mapper.*;
 import com.data.m5p.pojo.*;
 import com.data.m5p.pojo.Module;
+import com.data.m5p.vo.ModuleCommentVO;
 import com.data.m5p.vo.ModuleTagVO;
 import com.data.m5p.vo.ModuleVO;
 import org.apache.ibatis.javassist.NotFoundException;
@@ -28,13 +26,17 @@ public class ModuleService {
     @Resource
     private TagMapper tagMapper;
     @Resource
+    private CommentMapper commentMapper;
+    @Resource
     private ModuleTagRelationMapper moduleTagRelationMapper;
     @Resource
     private StudentModuleRelationMapper studentModuleRelationMapper;
+    @Resource
+    private ModuleCommentRelationMapper moduleCommentRelationMapper;
 
     private IdWorker idWorker1 = new IdWorker(1, DatacenterId.Module.getValue(), 1);
     private IdWorker idWorker2 = new IdWorker(1, DatacenterId.Tag.getValue(), 1);
-    private IdWorker idWorker3 = new IdWorker(1, DatacenterId.ModuleTag.getValue(), 1);
+    private IdWorker idWorker3 = new IdWorker(1, DatacenterId.Relation.getValue(), 1);
 
     @Transactional
     public void createModule(ModuleTagAO moduleTagAO) {
@@ -79,12 +81,48 @@ public class ModuleService {
         System.out.println(module.getName());
     }
 
-    public Module getModuleById(Long id) throws NotFoundException {
+//    public Module getModuleById(Long id) throws NotFoundException {
+//        Module module = moduleMapper.selectByPrimaryKey(id);
+//        if (module==null) {
+//            throw new NotFoundException("Module not found");
+//        }
+//        return module;
+//    }
+
+    public ModuleCommentVO getModuleById(Long id) {
+
+        // 从 module id 找到 module
+        // 从 module 变为 moduleVO 封装
+        // 从 module id 找到 module comment relation
+        // 找到 comments 封装
+
+        ModuleCommentVO moduleCommentVO = new ModuleCommentVO();
+
         Module module = moduleMapper.selectByPrimaryKey(id);
-        if (module==null) {
-            throw new NotFoundException("Module not found");
+
+        moduleCommentVO.setModuleVO(ModuleService.ModuleToModuleVO(module));
+
+        Example moduleCommentExample = new Example(ModuleCommentRelation.class);
+        Example.Criteria moduleCommentCriteria = moduleCommentExample.createCriteria();
+        moduleCommentCriteria.andEqualTo("moduleId", id);
+
+        List<ModuleCommentRelation> moduleCommentRelations = moduleCommentRelationMapper.selectByExample(moduleCommentExample);
+        List<Long> commentIds = new ArrayList<>();
+        for (ModuleCommentRelation moduleCommentRelation: moduleCommentRelations) {
+            Long commentId = moduleCommentRelation.getCommentId();
+            commentIds.add(commentId);
         }
-        return module;
+
+        List<Comment> comments = new ArrayList<>();
+        for (Long commentId : commentIds) {
+            Comment comment = commentMapper.selectByPrimaryKey(commentId);
+            comments.add(comment);
+        }
+
+        moduleCommentVO.setCommentVOS(CommentService.CommentsToCommentVOS(comments));
+
+        return moduleCommentVO;
+
     }
 
     public List<ModuleTagAO> getModule() {
@@ -107,7 +145,7 @@ public class ModuleService {
     }
 
     public List<ModuleTagAO> getModuleByStudent(Long id) {
-        List<Module> modules = this.findModule(id);
+        List<Module> modules = this.findModules(id);
         List<ModuleTagAO> moduleTagAOS = new ArrayList<>();
         for (Module module:modules) {
             ModuleTagAO moduleTagAO = new ModuleTagAO();
@@ -124,7 +162,7 @@ public class ModuleService {
         return moduleTagAOS;
     }
 
-    public List<Module> findModule(Long id) {
+    public List<Module> findModules(Long id) {
         Example studentModuleExample = new Example(StudentModuleRelation.class);
         Example.Criteria studentModuleCriteria = studentModuleExample.createCriteria();
         studentModuleCriteria.andEqualTo("studentId", id);
@@ -148,14 +186,14 @@ public class ModuleService {
 
     public void deleteModule(Long id) {
 
-        Module module = this.existModule(id);
+        Module module = this.findModule(id);
         if (module!=null) {
             module.setStatus(0);
         }
         moduleMapper.updateByPrimaryKeySelective(module);
     }
 
-    public Module existModule(Long id) {
+    public Module findModule(Long id) {
         if(moduleMapper.existsWithPrimaryKey(id)) {
             Module module = moduleMapper.selectByPrimaryKey(id);
             if (module.getStatus()==1) {

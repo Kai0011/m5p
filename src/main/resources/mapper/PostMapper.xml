@@ -12,5 +12,9 @@
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
     <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="like_count" jdbcType="INTEGER" property="likeCount" />
+    <result column="collection_count" jdbcType="INTEGER" property="collectionCount" />
+    <result column="view_count" jdbcType="INTEGER" property="viewCount" />
+    <result column="comment_count" jdbcType="INTEGER" property="commentCount" />
   </resultMap>
 </mapper>

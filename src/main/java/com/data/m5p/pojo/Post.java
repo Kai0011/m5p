@@ -30,6 +30,18 @@ public class Post {
 
     private Integer status;
 
+    @Column(name = "like_count")
+    private Integer likeCount;
+
+    @Column(name = "collection_count")
+    private Integer collectionCount;
+
+    @Column(name = "view_count")
+    private Integer viewCount;
+
+    @Column(name = "comment_count")
+    private Integer commentCount;
+
     /**
      * @return id
      */
@@ -138,5 +150,61 @@ public class Post {
      */
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    /**
+     * @return like_count
+     */
+    public Integer getLikeCount() {
+        return likeCount;
+    }
+
+    /**
+     * @param likeCount
+     */
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    /**
+     * @return collection_count
+     */
+    public Integer getCollectionCount() {
+        return collectionCount;
+    }
+
+    /**
+     * @param collectionCount
+     */
+    public void setCollectionCount(Integer collectionCount) {
+        this.collectionCount = collectionCount;
+    }
+
+    /**
+     * @return view_count
+     */
+    public Integer getViewCount() {
+        return viewCount;
+    }
+
+    /**
+     * @param viewCount
+     */
+    public void setViewCount(Integer viewCount) {
+        this.viewCount = viewCount;
+    }
+
+    /**
+     * @return comment_count
+     */
+    public Integer getCommentCount() {
+        return commentCount;
+    }
+
+    /**
+     * @param commentCount
+     */
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
     }
 }

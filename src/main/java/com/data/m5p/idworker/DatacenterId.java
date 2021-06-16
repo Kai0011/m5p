@@ -1,7 +1,7 @@
 package com.data.m5p.idworker;
 
 public enum DatacenterId {
-    User(1), Module(2), Post(3), Student(4), Gpa(5), Tag(6), ModuleTag(7);
+    User(1), Module(2), Post(3), Student(4), Bg(5), Tag(6), Relation(7), Comment(8), PostContent(9), Offer(10);
     private long value;
 
     public long getValue() {

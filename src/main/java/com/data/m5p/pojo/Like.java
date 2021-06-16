@@ -9,11 +9,10 @@ public class Like {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "post_id")
-    private Long postId;
+    private Integer type;
 
-    @Column(name = "comment_id")
-    private Long commentId;
+    @Column(name = "target_id")
+    private Long targetId;
 
     @Column(name = "user_id")
     private Long userId;
@@ -41,31 +40,31 @@ public class Like {
     }
 
     /**
-     * @return post_id
+     * @return type
      */
-    public Long getPostId() {
-        return postId;
+    public Integer getType() {
+        return type;
     }
 
     /**
-     * @param postId
+     * @param type
      */
-    public void setPostId(Long postId) {
-        this.postId = postId;
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     /**
-     * @return comment_id
+     * @return target_id
      */
-    public Long getCommentId() {
-        return commentId;
+    public Long getTargetId() {
+        return targetId;
     }
 
     /**
-     * @param commentId
+     * @param targetId
      */
-    public void setCommentId(Long commentId) {
-        this.commentId = commentId;
+    public void setTargetId(Long targetId) {
+        this.targetId = targetId;
     }
 
     /**

@@ -9,11 +9,13 @@ public class Collection {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Integer type;
+
+    @Column(name = "target_id")
+    private Long targetId;
+
     @Column(name = "user_id")
     private Long userId;
-
-    @Column(name = "post_id")
-    private Long postId;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -38,6 +40,34 @@ public class Collection {
     }
 
     /**
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    /**
+     * @param type
+     */
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    /**
+     * @return target_id
+     */
+    public Long getTargetId() {
+        return targetId;
+    }
+
+    /**
+     * @param targetId
+     */
+    public void setTargetId(Long targetId) {
+        this.targetId = targetId;
+    }
+
+    /**
      * @return user_id
      */
     public Long getUserId() {
@@ -49,20 +79,6 @@ public class Collection {
      */
     public void setUserId(Long userId) {
         this.userId = userId;
-    }
-
-    /**
-     * @return post_id
-     */
-    public Long getPostId() {
-        return postId;
-    }
-
-    /**
-     * @param postId
-     */
-    public void setPostId(Long postId) {
-        this.postId = postId;
     }
 
     /**

@@ -3,18 +3,16 @@ package com.data.m5p.pojo;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "`offer_study`")
-public class OfferStudy {
-    @Id
+@Table(name = "`post_tag_relation`")
+public class PostTagRelation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String university;
+    @Column(name = "post_id")
+    private Long postId;
 
-    private String project;
-
-    @Column(name = "offer_bg_id")
-    private Long offerBgId;
+    @Column(name = "tag_id")
+    private Long tagId;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -39,45 +37,31 @@ public class OfferStudy {
     }
 
     /**
-     * @return university
+     * @return post_id
      */
-    public String getUniversity() {
-        return university;
+    public Long getPostId() {
+        return postId;
     }
 
     /**
-     * @param university
+     * @param postId
      */
-    public void setUniversity(String university) {
-        this.university = university;
+    public void setPostId(Long postId) {
+        this.postId = postId;
     }
 
     /**
-     * @return project
+     * @return tag_id
      */
-    public String getProject() {
-        return project;
+    public Long getTagId() {
+        return tagId;
     }
 
     /**
-     * @param project
+     * @param tagId
      */
-    public void setProject(String project) {
-        this.project = project;
-    }
-
-    /**
-     * @return offer_bg_id
-     */
-    public Long getOfferBgId() {
-        return offerBgId;
-    }
-
-    /**
-     * @param offerBgId
-     */
-    public void setOfferBgId(Long offerBgId) {
-        this.offerBgId = offerBgId;
+    public void setTagId(Long tagId) {
+        this.tagId = tagId;
     }
 
     /**

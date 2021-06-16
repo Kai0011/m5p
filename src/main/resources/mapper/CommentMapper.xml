@@ -7,10 +7,13 @@
     -->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="replying" jdbcType="BIGINT" property="replying" />
     <result column="rating" jdbcType="DOUBLE" property="rating" />
     <result column="comment_type" jdbcType="INTEGER" property="commentType" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
     <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="like_count" jdbcType="INTEGER" property="likeCount" />
+    <result column="reply_count" jdbcType="INTEGER" property="replyCount" />
   </resultMap>
 </mapper>

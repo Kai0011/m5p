@@ -19,6 +19,8 @@ public class Module {
 
     private String icon;
 
+    private Double rating;
+
     @Column(name = "create_date")
     private Date createDate;
 
@@ -111,6 +113,20 @@ public class Module {
      */
     public void setIcon(String icon) {
         this.icon = icon;
+    }
+
+    /**
+     * @return rating
+     */
+    public Double getRating() {
+        return rating;
+    }
+
+    /**
+     * @param rating
+     */
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 
     /**

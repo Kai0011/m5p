@@ -14,7 +14,7 @@ public class GpaService {
     @Resource
     private GpaMapper gpaMapper;
 
-    private IdWorker idWorker = new IdWorker(1, DatacenterId.Gpa.getValue(), 1);
+    private IdWorker idWorker = new IdWorker(1, DatacenterId.Bg.getValue(), 1);
 
     public void updateGpa(Gpa gpa) {
         gpa.setModifiedDate(new Date());

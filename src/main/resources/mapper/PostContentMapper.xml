@@ -8,7 +8,7 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="post_id" jdbcType="BIGINT" property="postId" />
     <result column="offer_study_id" jdbcType="BIGINT" property="offerStudyId" />
-    <result column="ofeer_job_id" jdbcType="BIGINT" property="ofeerJobId" />
+    <result column="offer_job_id" jdbcType="BIGINT" property="offerJobId" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
     <result column="status" jdbcType="INTEGER" property="status" />

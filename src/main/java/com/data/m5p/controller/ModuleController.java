@@ -2,8 +2,11 @@ package com.data.m5p.controller;
 
 import com.data.m5p.ao.ModuleTagAO;
 import com.data.m5p.common.CommonResult;
+import com.data.m5p.pojo.Comment;
 import com.data.m5p.pojo.Module;
+import com.data.m5p.service.CommentService;
 import com.data.m5p.service.ModuleService;
+import com.data.m5p.vo.ModuleCommentVO;
 import com.data.m5p.vo.ModuleVO;
 import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +19,8 @@ import java.util.List;
 public class ModuleController {
     @Resource
     private ModuleService moduleService;
+    @Resource
+    private CommentService commentService;
 
     @PostMapping("/modules")
     public CommonResult<String> createModule(@RequestBody ModuleTagAO moduleTagAO) {
@@ -23,6 +28,13 @@ public class ModuleController {
         moduleService.createModule(moduleTagAO);
 
         return CommonResult.success("create module successfully");
+    }
+
+    @PostMapping("/modules/{id}/comments")
+    public CommonResult<String> createComment(@PathVariable Long id, @RequestBody Comment comment) {
+        commentService.creatModuleComment(comment, id);
+
+        return CommonResult.success("create comment successfully");
     }
 
     @GetMapping("/modules")
@@ -34,12 +46,11 @@ public class ModuleController {
     }
 
     @GetMapping("/modules/{id}")
-    public CommonResult<ModuleVO> getModuleById(@PathVariable Long id) throws NotFoundException {
+    public CommonResult<ModuleCommentVO> getModuleById(@PathVariable Long id) throws NotFoundException {
 
-        Module module = moduleService.getModuleById(id);
-        ModuleVO moduleVO = ModuleService.ModuleToModuleVO(module);
+        ModuleCommentVO moduleCommentVO = moduleService.getModuleById(id);
 
-        return CommonResult.success(moduleVO);
+        return CommonResult.success(moduleCommentVO);
     }
 
     @GetMapping("modules/student/{id}")
