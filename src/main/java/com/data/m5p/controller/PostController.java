@@ -32,7 +32,7 @@ public class PostController {
 
     @PostMapping("/posts/{id}/comments")
     public CommonResult<String> createComment(@PathVariable Long id, @RequestBody Comment comment) {
-        commentService.creatPostComment(comment, id);
+        commentService.savePostComment(comment, id);
 
         return CommonResult.success("create comment successfully");
     }

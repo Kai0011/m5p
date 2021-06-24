@@ -30,7 +30,7 @@ public class CommentService {
     private IdWorker idWorker1 = new IdWorker(1, DatacenterId.Comment.getValue(), 1);
     private IdWorker idWorker2 = new IdWorker(1, DatacenterId.Relation.getValue(), 1);
 
-    public void creatPostComment(Comment comment, Long id) {
+    public void savePostComment(Comment comment, Long id) {
         Long commentId= idWorker1.nextId();
 
         // create comment
@@ -69,7 +69,7 @@ public class CommentService {
 
     }
 
-    public void creatModuleComment(Comment comment, Long id) {
+    public void saveModuleComment(Comment comment, Long id) {
         Long commentId= idWorker1.nextId();
 
         // create comment

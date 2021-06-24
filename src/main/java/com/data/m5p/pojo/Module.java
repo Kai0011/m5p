@@ -29,6 +29,12 @@ public class Module {
 
     private Integer status;
 
+    @Column(name = "start_date")
+    private String startDate;
+
+    @Column(name = "end_date")
+    private String endDate;
+
     private String extra;
 
     /**
@@ -169,6 +175,34 @@ public class Module {
      */
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    /**
+     * @return start_date
+     */
+    public String getStartDate() {
+        return startDate;
+    }
+
+    /**
+     * @param startDate
+     */
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    /**
+     * @return end_date
+     */
+    public String getEndDate() {
+        return endDate;
+    }
+
+    /**
+     * @param endDate
+     */
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     /**

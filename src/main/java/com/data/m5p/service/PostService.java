@@ -137,6 +137,8 @@ public class PostService {
 
     public PostCommentVO getPostById(Long id) {
 
+        // 每访问一次 浏览量 +1
+
         // 从post id 找到 post content 加入封装
         // 从 post content 找 offer 加入封装
         // 从 offer 找 offer bg 加入封装
@@ -146,6 +148,10 @@ public class PostService {
 
         Post post = postMapper.selectByPrimaryKey(id);
         postCommentVO.setTitle(post.getName());
+        postCommentVO.setViewCount(post.getViewCount() + 1);
+        postCommentVO.setLikeCount(post.getLikeCount());
+        postCommentVO.setCollectionCount(post.getCollectionCount());
+        postCommentVO.setCommentCount(post.getCommentCount());
 
         // post content
         PostContent postContent = postContentMapper.selectByPrimaryKey(post.getPostContentId());
@@ -292,6 +298,10 @@ public class PostService {
             postVO.setId(post.getId());
             postVO.setName(post.getName());
             postVO.setType(post.getPostType());
+            postVO.setViewCount(post.getViewCount());
+            postVO.setLikeCount(post.getLikeCount());
+            postVO.setCommentCount(post.getCommentCount());
+            postVO.setCollectionCount(post.getCollectionCount());
             postVOS.add(postVO);
         }
         return postVOS;

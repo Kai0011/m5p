@@ -12,6 +12,42 @@ public class PostCommentVO {
     private PostContent postContent;
     private OfferBg offerBg;
     private List<CommentVO> commentVOS;
+    private Integer commentCount;
+    private Integer likeCount;
+    private Integer viewCount;
+    private Integer CollectionCount;
+
+    public Integer getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
+    }
+
+    public Integer getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public Integer getViewCount() {
+        return viewCount;
+    }
+
+    public void setViewCount(Integer viewCount) {
+        this.viewCount = viewCount;
+    }
+
+    public Integer getCollectionCount() {
+        return CollectionCount;
+    }
+
+    public void setCollectionCount(Integer collectionCount) {
+        CollectionCount = collectionCount;
+    }
 
     public String getTitle() {
         return title;

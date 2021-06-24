@@ -25,14 +25,14 @@ public class ModuleController {
     @PostMapping("/modules")
     public CommonResult<String> createModule(@RequestBody ModuleTagAO moduleTagAO) {
 
-        moduleService.createModule(moduleTagAO);
+        moduleService.saveModule(moduleTagAO);
 
         return CommonResult.success("create module successfully");
     }
 
     @PostMapping("/modules/{id}/comments")
     public CommonResult<String> createComment(@PathVariable Long id, @RequestBody Comment comment) {
-        commentService.creatModuleComment(comment, id);
+        commentService.saveModuleComment(comment, id);
 
         return CommonResult.success("create comment successfully");
     }
@@ -40,7 +40,7 @@ public class ModuleController {
     @GetMapping("/modules")
     public CommonResult<List<ModuleTagAO>> getModule() {
 
-        List<ModuleTagAO> moduleTagAOS = moduleService.getModule();
+        List<ModuleTagAO> moduleTagAOS = moduleService.listModules();
 
         return CommonResult.success(moduleTagAOS);
     }
@@ -55,7 +55,7 @@ public class ModuleController {
 
     @GetMapping("modules/student/{id}")
     public CommonResult<List<ModuleTagAO>> getModuleByStudent(@PathVariable Long id) {
-        List<ModuleTagAO> moduleTagAOS = moduleService.getModuleByStudent(id);
+        List<ModuleTagAO> moduleTagAOS = moduleService.listModulesByStudent(id);
 
         return CommonResult.success(moduleTagAOS);
 

@@ -39,7 +39,7 @@ public class ModuleService {
     private IdWorker idWorker3 = new IdWorker(1, DatacenterId.Relation.getValue(), 1);
 
     @Transactional
-    public void createModule(ModuleTagAO moduleTagAO) {
+    public void saveModule(ModuleTagAO moduleTagAO) {
 
         Module module = new Module();
         Long moduleId = idWorker1.nextId();
@@ -53,6 +53,8 @@ public class ModuleService {
         module.setBriefing(moduleTagAO.getBriefing());
         module.setIcon(moduleTagAO.getIcon());
         module.setExtra(moduleTagAO.getExtra());
+        module.setStartDate(moduleTagAO.getStartDate());
+        module.setEndDate(moduleTagAO.getEndDate());
         moduleMapper.insert(module);
 
         Long tagId;
@@ -125,7 +127,7 @@ public class ModuleService {
 
     }
 
-    public List<ModuleTagAO> getModule() {
+    public List<ModuleTagAO> listModules() {
 
         List<Module> modules = moduleMapper.selectAll();
         List<ModuleTagAO> moduleTagAOS = new ArrayList<>();
@@ -139,12 +141,15 @@ public class ModuleService {
             moduleTagAO.setRequirement(module.getRequirement());
             moduleTagAO.setBriefing(module.getBriefing());
             moduleTagAO.setExtra(module.getExtra());
+            moduleTagAO.setRating(module.getRating());
+            moduleTagAO.setStartDate(module.getStartDate());
+            moduleTagAO.setEndDate(module.getEndDate());
             moduleTagAOS.add(moduleTagAO);
         }
         return moduleTagAOS;
     }
 
-    public List<ModuleTagAO> getModuleByStudent(Long id) {
+    public List<ModuleTagAO> listModulesByStudent(Long id) {
         List<Module> modules = this.findModules(id);
         List<ModuleTagAO> moduleTagAOS = new ArrayList<>();
         for (Module module:modules) {
@@ -157,6 +162,9 @@ public class ModuleService {
             moduleTagAO.setRequirement(module.getRequirement());
             moduleTagAO.setBriefing(module.getIcon());
             moduleTagAO.setExtra(module.getExtra());
+            moduleTagAO.setRating(module.getRating());
+            moduleTagAO.setStartDate(module.getStartDate());
+            moduleTagAO.setEndDate(module.getEndDate());
             moduleTagAOS.add(moduleTagAO);
         }
         return moduleTagAOS;
@@ -239,6 +247,9 @@ public class ModuleService {
         moduleVO.setBriefing(module.getBriefing());
         moduleVO.setIcon(module.getIcon());
         moduleVO.setExtra(module.getExtra());
+        moduleVO.setRating(module.getRating());
+        moduleVO.setStartDate(moduleVO.getStartDate());
+        moduleVO.setEndDate(moduleVO.getEndDate());
         return moduleVO;
     }
 
@@ -253,6 +264,9 @@ public class ModuleService {
             moduleVO.setBriefing(module.getBriefing());
             moduleVO.setIcon(module.getIcon());
             moduleVO.setExtra(module.getExtra());
+            moduleVO.setRating(module.getRating());
+            moduleVO.setStartDate(module.getStartDate());
+            moduleVO.setEndDate(module.getEndDate());
             moduleVOS.add(moduleVO);
         }
         return moduleVOS;

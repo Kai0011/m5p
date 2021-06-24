@@ -12,6 +12,33 @@ public class ModuleTagAO {
     private String briefing;
     private String icon;
     private String extra;
+    private Double rating;
+    private String startDate;
+    private String endDate;
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
     private List<Tag> tags;
 
     public Long getId() {

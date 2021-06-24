@@ -8,6 +8,25 @@ public class ModuleVO {
     private String briefing;
     private String icon;
     private String extra;
+    private Double rating;
+    private String startDate;
+    private String endDate;
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
 
     public Long getId() {
         return id;
@@ -63,5 +82,13 @@ public class ModuleVO {
 
     public void setExtra(String extra) {
         this.extra = extra;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 }
