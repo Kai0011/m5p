@@ -4,6 +4,7 @@ import com.data.m5p.common.IdWorker;
 import com.data.m5p.idworker.DatacenterId;
 import com.data.m5p.mapper.*;
 import com.data.m5p.pojo.*;
+import com.data.m5p.pojo.Module;
 import com.data.m5p.vo.CommentVO;
 import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,10 @@ import java.util.List;
 public class CommentService {
     @Resource
     private CommentMapper commentMapper;
+    @Resource
+    private ModuleMapper moduleMapper;
+    @Resource
+    private PostMapper postMapper;
     @Resource
     private PostCommentRelationMapper postCommentRelationMapper;
     @Resource
@@ -67,6 +72,15 @@ public class CommentService {
         userCommentRelation.setModifiedDate(new Date());
         userCommentRelationMapper.insert(userCommentRelation);
 
+        // post comment count +1
+        Post post = postMapper.selectByPrimaryKey(id);
+        if (post.getCommentCount()==null) {
+            post.setCommentCount(1);
+        }
+        else {
+            post.setCommentCount(post.getCommentCount() + 1);
+        }
+
     }
 
     public void saveModuleComment(Comment comment, Long id) {
@@ -105,6 +119,15 @@ public class CommentService {
         userCommentRelation.setModifiedDate(new Date());
         userCommentRelationMapper.insert(userCommentRelation);
 
+        // module comment count +1
+        Module module = moduleMapper.selectByPrimaryKey(id);
+        if (module.getCommentCount()==null){
+            module.setCommentCount(1);
+        }
+        else {
+            module.setCommentCount(module.getCommentCount() + 1);
+            moduleMapper.updateByPrimaryKeySelective(module);
+        }
     }
 
     public Comment getCommentById(Long id) throws NotFoundException {

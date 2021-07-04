@@ -142,6 +142,7 @@ public class ModuleService {
             moduleTagAO.setBriefing(module.getBriefing());
             moduleTagAO.setExtra(module.getExtra());
             moduleTagAO.setRating(module.getRating());
+            moduleTagAO.setCommentCount(module.getCommentCount());
             moduleTagAO.setStartDate(module.getStartDate());
             moduleTagAO.setEndDate(module.getEndDate());
             moduleTagAOS.add(moduleTagAO);
@@ -163,6 +164,7 @@ public class ModuleService {
             moduleTagAO.setBriefing(module.getIcon());
             moduleTagAO.setExtra(module.getExtra());
             moduleTagAO.setRating(module.getRating());
+            moduleTagAO.setCommentCount(module.getCommentCount());
             moduleTagAO.setStartDate(module.getStartDate());
             moduleTagAO.setEndDate(module.getEndDate());
             moduleTagAOS.add(moduleTagAO);

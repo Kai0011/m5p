@@ -12,6 +12,7 @@
     <result column="briefing" jdbcType="VARCHAR" property="briefing" />
     <result column="icon" jdbcType="VARCHAR" property="icon" />
     <result column="rating" jdbcType="DOUBLE" property="rating" />
+    <result column="comment_count" jdbcType="INTEGER" property="commentCount" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
     <result column="status" jdbcType="INTEGER" property="status" />

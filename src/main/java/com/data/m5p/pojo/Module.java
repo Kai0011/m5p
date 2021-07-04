@@ -21,6 +21,9 @@ public class Module {
 
     private Double rating;
 
+    @Column(name = "comment_count")
+    private Integer commentCount;
+
     @Column(name = "create_date")
     private Date createDate;
 
@@ -133,6 +136,20 @@ public class Module {
      */
     public void setRating(Double rating) {
         this.rating = rating;
+    }
+
+    /**
+     * @return comment_count
+     */
+    public Integer getCommentCount() {
+        return commentCount;
+    }
+
+    /**
+     * @param commentCount
+     */
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
     }
 
     /**

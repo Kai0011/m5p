@@ -15,6 +15,7 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
+        <erupt.version>1.7.2</erupt.version>
     </properties>
     <dependencies>
         <dependency>
@@ -58,6 +59,25 @@
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
             <version>1.2.4</version>
+        </dependency>
+
+        <!--用户权限管理-->
+        <dependency>
+            <groupId>xyz.erupt</groupId>
+            <artifactId>erupt-upms</artifactId>
+            <version>${erupt.version}</version>
+        </dependency>
+        <!--接口数据安全-->
+        <dependency>
+            <groupId>xyz.erupt</groupId>
+            <artifactId>erupt-security</artifactId>
+            <version>${erupt.version}</version>
+        </dependency>
+        <!--后台WEB界面-->
+        <dependency>
+            <groupId>xyz.erupt</groupId>
+            <artifactId>erupt-web</artifactId>
+            <version>${erupt.version}</version>
         </dependency>
 
     </dependencies>

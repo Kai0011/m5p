@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.data.m5p.mapper.UserTokenMapper">
+  <resultMap id="BaseResultMap" type="com.data.m5p.pojo.UserToken">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="token" jdbcType="VARCHAR" property="token" />
+    <result column="expire" jdbcType="TIMESTAMP" property="expire" />
+  </resultMap>
+</mapper>

@@ -13,8 +13,10 @@ public class ModuleTagAO {
     private String icon;
     private String extra;
     private Double rating;
+    private Integer commentCount;
     private String startDate;
     private String endDate;
+    private List<Tag> tags;
 
     public Double getRating() {
         return rating;
@@ -23,6 +25,7 @@ public class ModuleTagAO {
     public void setRating(Double rating) {
         this.rating = rating;
     }
+
     public String getStartDate() {
         return startDate;
     }
@@ -39,7 +42,7 @@ public class ModuleTagAO {
         this.endDate = endDate;
     }
 
-    private List<Tag> tags;
+
 
     public Long getId() {
         return id;
@@ -104,4 +107,13 @@ public class ModuleTagAO {
     public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
+
+    public Integer getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
+    }
+
 }
