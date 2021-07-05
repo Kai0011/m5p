@@ -74,12 +74,8 @@ public class CommentService {
 
         // post comment count +1
         Post post = postMapper.selectByPrimaryKey(id);
-        if (post.getCommentCount()==null) {
-            post.setCommentCount(1);
-        }
-        else {
-            post.setCommentCount(post.getCommentCount() + 1);
-        }
+        post.setCommentCount(post.getCommentCount() + 1);
+        postMapper.updateByPrimaryKeySelective(post);
 
     }
 
@@ -121,13 +117,8 @@ public class CommentService {
 
         // module comment count +1
         Module module = moduleMapper.selectByPrimaryKey(id);
-        if (module.getCommentCount()==null){
-            module.setCommentCount(1);
-        }
-        else {
-            module.setCommentCount(module.getCommentCount() + 1);
-            moduleMapper.updateByPrimaryKeySelective(module);
-        }
+        module.setCommentCount(module.getCommentCount() + 1);
+        moduleMapper.updateByPrimaryKeySelective(module);
     }
 
     public Comment getCommentById(Long id) throws NotFoundException {

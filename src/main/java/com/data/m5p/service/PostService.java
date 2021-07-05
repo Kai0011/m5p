@@ -79,6 +79,12 @@ public class PostService {
         post.setStatus(1);
         post.setCreateDate(new Date());
         post.setModifiedDate(new Date());
+        // set view like collection reply count to 0
+        post.setCommentCount(0);
+        post.setLikeCount(0);
+        post.setCollectionCount(0);
+        post.setViewCount(0);
+
         postMapper.insert(post);
 
         PostContent postContent = postAO.getPostContent();

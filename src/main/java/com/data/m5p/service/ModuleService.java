@@ -55,6 +55,8 @@ public class ModuleService {
         module.setExtra(moduleTagAO.getExtra());
         module.setStartDate(moduleTagAO.getStartDate());
         module.setEndDate(moduleTagAO.getEndDate());
+        // set comment count to 0
+        module.setCommentCount(0);
         moduleMapper.insert(module);
 
         Long tagId;
