@@ -7,7 +7,6 @@ import com.data.m5p.pojo.Module;
 import com.data.m5p.service.CommentService;
 import com.data.m5p.service.ModuleService;
 import com.data.m5p.vo.ModuleCommentVO;
-import com.data.m5p.vo.ModuleVO;
 import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,7 +37,7 @@ public class ModuleController {
     }
 
     @GetMapping("/modules")
-    public CommonResult<List<ModuleTagAO>> getModule() {
+    public CommonResult<List<ModuleTagAO>> getModules() {
 
         List<ModuleTagAO> moduleTagAOS = moduleService.listModules();
 
@@ -54,7 +53,7 @@ public class ModuleController {
     }
 
     @GetMapping("modules/student/{id}")
-    public CommonResult<List<ModuleTagAO>> getModuleByStudent(@PathVariable Long id) {
+    public CommonResult<List<ModuleTagAO>> getModulesByStudent(@PathVariable Long id) {
         List<ModuleTagAO> moduleTagAOS = moduleService.listModulesByStudent(id);
 
         return CommonResult.success(moduleTagAOS);

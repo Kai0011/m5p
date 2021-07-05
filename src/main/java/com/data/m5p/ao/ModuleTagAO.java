@@ -42,8 +42,6 @@ public class ModuleTagAO {
         this.endDate = endDate;
     }
 
-
-
     public Long getId() {
         return id;
     }

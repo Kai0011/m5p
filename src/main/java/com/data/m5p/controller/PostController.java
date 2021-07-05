@@ -1,13 +1,13 @@
 package com.data.m5p.controller;
 
-import com.data.m5p.ao.PostAO;
+import com.data.m5p.ao.PostTagAO;
 import com.data.m5p.common.CommonResult;
 import com.data.m5p.pojo.Comment;
 import com.data.m5p.pojo.Post;
 import com.data.m5p.service.CommentService;
 import com.data.m5p.service.PostService;
 import com.data.m5p.vo.PostCommentVO;
-import com.data.m5p.vo.PostVO;
+import com.data.m5p.vo.PostTagVO;
 import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,9 +23,9 @@ public class PostController {
     private CommentService commentService;
 
     @PostMapping("/posts")
-    public CommonResult<String> createPost(@RequestBody PostAO postAO) {
+    public CommonResult<String> createPost(@RequestBody PostTagAO postTagAO) {
 
-        postService.createPost(postAO);
+        postService.createPost(postTagAO);
 
         return CommonResult.success("create post successfully");
     }
@@ -38,12 +38,11 @@ public class PostController {
     }
 
     @GetMapping("/posts")
-    public CommonResult<List<PostVO>> getPost() {
+    public CommonResult<List<PostTagVO>> getPosts() {
 
-        List<Post> posts = postService.getPost();
-        List<PostVO> postVOS = PostService.PostsToPostVOS(posts);
+        List<PostTagVO> postTagVOS = postService.listPosts();
 
-        return CommonResult.success(postVOS);
+        return CommonResult.success(postTagVOS);
     }
 
     @GetMapping("/posts/{id}")

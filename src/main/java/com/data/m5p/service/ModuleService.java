@@ -94,9 +94,9 @@ public class ModuleService {
     public ModuleCommentVO getModuleById(Long id) {
 
         // 从 module id 找到 module
-        // 从 module 变为 moduleVO 封装
+        // 从 module 变为 moduleVO, 封装
         // 从 module id 找到 module comment relation
-        // 找到 comments 封装
+        // 找到 comments, 封装
 
         ModuleCommentVO moduleCommentVO = new ModuleCommentVO();
 
